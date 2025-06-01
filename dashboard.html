@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - ChatSpace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2 id="welcomeUser"></h2>
+    <input type="text" id="addFriendInput" placeholder="Add friend by username"/>
+    <button onclick="addFriend()">Add Friend</button>
+    <h3>Your Friends</h3>
+    <ul id="friendsList"></ul>
+    <button onclick="location.href='chat.html'">Open Chat</button>
+    <button onclick="location.href='settings.html'">Settings</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
