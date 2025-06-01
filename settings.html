@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Settings - ChatSpace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Settings</h2>
+    <label>Change Username</label>
+    <input type="text" id="newUsername"/>
+    <button onclick="changeUsername()">Update</button>
+
+    <label>Theme</label>
+    <select id="themeSelector" onchange="setTheme()">
+      <option value="default">Default</option>
+      <option value="gold">Gold</option>
+      <option value="matrix">Matrix</option>
+      <option value="nebula">Nebula</option>
+    </select>
+
+    <label>Activate Plus Mode</label>
+    <button onclick="togglePlus()">Enable ChatSpace⁺</button>
+
+    <button onclick="location.href='dashboard.html'">Back</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
