@@ -1,31 +1,67 @@
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--bg, #f0f0f0);
-  color: var(--text, #000);
-  padding: 20px;
 }
 
-.container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
-  background: var(--container-bg, white);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.landing, .auth-container, .settings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-input, textarea, select, button {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
+.auth-buttons a {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header, .chat-input {
   padding: 10px;
+  background-color: #ddd;
 }
 
-button {
-  cursor: pointer;
+.chat-window {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #fff;
 }
 
-/* Themes */
-body.gold { --bg: #fff8e1; --text: #795548; --container-bg: #fff3cd; }
-body.matrix { --bg: #000; --text: #0f0; --container-bg: #111; }
-body.nebula { --bg: #1a1a40; --text: #e0e0ff; --container-bg: #2c2c54; }
+.chat-input {
+  display: flex;
+  align-items: center;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.quick-replies button {
+  margin: 5px;
+  padding: 5px 10px;
+}
