@@ -2,36 +2,39 @@
 <html>
 <head>
   <title>Sign Up - ChatSpace</title>
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="auth-container">
-    <h2>Sign Up</h2>
-    <form id="signupForm">
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="text" id="username" placeholder="Username" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Sign Up</button>
-    </form>
-    <p>Already have an account? <a href="login.html">Login</a></p>
-  </div>
+  <h2>Sign Up</h2>
+  <form id="signupForm">
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Sign Up</button>
+  </form>
+  <p>Already have an account? <a href="login.html">Login</a></p>
+
   <script>
     const form = document.getElementById("signupForm");
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
+
       const email = document.getElementById("email").value.trim();
       const username = document.getElementById("username").value.trim();
       const password = document.getElementById("password").value;
 
-      const users = JSON.parse(localStorage.getItem("users") || "[]");
-
-      // Check for duplicate username
-      if (users.some(u => u.username === username)) {
-        alert("Username already taken.");
+      if (!email || !username || !password) {
+        alert("All fields required.");
         return;
       }
 
-      users.push({ email, username, password, plus: false, friends: [], messages: {} });
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+
+      if (users.some(user => user.username === username)) {
+        alert("Username already taken!");
+        return;
+      }
+
+      users.push({ email, username, password });
       localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("loggedInUser", username);
       window.location.href = "dashboard.html";
