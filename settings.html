@@ -2,28 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Settings - ChatSpace</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="settings-container">
     <h2>Settings</h2>
-    <label>Change Username</label>
-    <input type="text" id="newUsername"/>
-    <button onclick="changeUsername()">Update</button>
-
-    <label>Theme</label>
-    <select id="themeSelector" onchange="setTheme()">
-      <option value="default">Default</option>
-      <option value="gold">Gold</option>
-      <option value="matrix">Matrix</option>
-      <option value="nebula">Nebula</option>
+    <label>
+      <input type="checkbox" id="chatSpacePlusToggle" />
+      Activate ChatSpace⁺
+    </label>
+    <label for="themeSelect">Select Theme:</label>
+    <select id="themeSelect">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="blue">Blue</option>
     </select>
-
-    <label>Activate Plus Mode</label>
-    <button onclick="togglePlus()">Enable ChatSpace⁺</button>
-
-    <button onclick="location.href='dashboard.html'">Back</button>
+    <button id="saveSettingsBtn">Save Settings</button>
+    <a href="dashboard.html">Back to Dashboard</a>
   </div>
   <script src="script.js"></script>
 </body>
