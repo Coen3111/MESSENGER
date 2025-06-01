@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard - ChatSpace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatSpace</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h2 id="welcomeUser"></h2>
-    <input type="text" id="addFriendInput" placeholder="Add friend by username"/>
-    <button onclick="addFriend()">Add Friend</button>
-    <h3>Your Friends</h3>
-    <ul id="friendsList"></ul>
-    <button onclick="location.href='chat.html'">Open Chat</button>
-    <button onclick="location.href='settings.html'">Settings</button>
-    <button onclick="logout()">Logout</button>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Friends</h2>
+      <input type="text" id="addFriendInput" placeholder="Add friend by username" />
+      <button id="addFriendBtn">Add Friend</button>
+      <ul id="friendsList"></ul>
+    </aside>
+    <main class="chat-area">
+      <header class="chat-header">
+        <h2 id="chatWith">Select a friend to chat</h2>
+        <button id="logoutBtn">Logout</button>
+      </header>
+      <section id="chatWindow" class="chat-window">
+        <!-- Messages will appear here -->
+      </section>
+      <footer class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button id="sendBtn">Send</button>
+        <div id="quickReplies" class="quick-replies">
+          <!-- Quick reply buttons will appear here -->
+        </div>
+      </footer>
+    </main>
   </div>
   <script src="script.js"></script>
 </body>
