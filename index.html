@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatSpace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="auth-section">
+    <h1>ChatSpace</h1>
+    <input id="username" placeholder="Username" />
+    <input id="password" placeholder="Password" type="password" />
+    <button onclick="signup()">Sign Up</button>
+    <button onclick="login()">Log In</button>
+  </div>
+
+  <div id="app" class="hidden">
+    <header>
+      <h2 id="title">ChatSpace</h2>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <section id="sidebar">
+      <h3>Friends</h3>
+      <ul id="friends-list"></ul>
+      <input id="add-user" placeholder="Add by username" />
+      <button onclick="addFriend()">Add Friend</button>
+
+      <h4>Blocked</h4>
+      <ul id="blocked-list"></ul>
+    </section>
+
+    <section id="chat-section">
+      <h3 id="chat-user">Select a friend</h3>
+      <div id="messages"></div>
+      <input id="message-input" placeholder="Type a message..." maxlength="100" />
+      <button onclick="sendMessage()">Send</button>
+      <div id="quick-replies" class="hidden">
+        <button onclick="quickReply('brb')">brb</button>
+        <button onclick="quickReply('gtg')">gtg</button>
+        <button onclick="quickReply('lol')">lol</button>
+        <button onclick="quickReply('ty')">ty</button>
+      </div>
+      <textarea id="friend-note" placeholder="Friend Note (Plus)" class="hidden"></textarea>
+    </section>
+
+    <section id="settings">
+      <h3>Settings</h3>
+      <button onclick="activatePlus()">Activate Plus (Free)</button>
+      <select id="theme-select" class="hidden" onchange="setTheme(this.value)">
+        <option value="default">Default</option>
+        <option value="gold">Gold</option>
+        <option value="matrix">Matrix</option>
+        <option value="nebula">Nebula</option>
+      </select>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
